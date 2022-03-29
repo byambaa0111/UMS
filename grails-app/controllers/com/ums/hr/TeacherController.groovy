@@ -246,6 +246,8 @@ class TeacherController {
 
         log.info("[SAVE TEACHERS]"+params)
         log.info("[1SAVE TEACHERS]"+teacher.facultyId)
+        log.info("[SAVeqE TEACHERS]"+params)
+        log.info("[232SAVE TEACHERS]"+teacher.facultyId)
 
         if (teacher == null) {
             notFound()
@@ -269,6 +271,7 @@ class TeacherController {
             teacher.setFaculty(dep.faculty)
 
             teacher.sysUser = sysUser
+/*savehiigdej baina */
 
             if (sysUser.validate() && teacher.validate()) {
 
