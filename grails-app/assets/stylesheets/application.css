@@ -1,0 +1,48 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require bootstrap
+
+*= require mobile
+*= require_self
+*= require light/style.css
+*= require light/icons.css
+
+*= require /scroll-bar/jquery.mCustomScrollbar.css
+*= require /toggle-menu/sidemenu.css
+*= require /morris/morris.css
+*= require /Datatable/css/dataTables.bootstrap4.css
+*= require /Datatable/css/dataTables.bootstrap.css
+*= require /Datatable/css/dataTables.foundation.css
+*= require /Datatable/css/dataTables.jqueryui.css
+*= require /Datatable/css/dataTables.semanticui.css
+*= require /Datatable/css/buttons.bootstrap4.min.css
+*= require /Datatable/css/jquery.dataTables.min.css
+*= require /fontawesome/css/font-awesome.min.css
+
+*= require /multipleselect/multiple-select.css
+*= require /multi/multi.min.css
+*= require /select2/select2.css
+
+*= require /iCheck/all.css
+*= require /bootstrap-timepicker/bootstrap-timepicker.min.css
+*= require /bootstrap-colorpicker/bootstrap-colorpicker.min.css
+*= require /bootstrap-daterangepicker/daterangepicker.css
+*= require /bootstrap-datepicker/bootstrap-datepicker.css
+*= require /tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.css
+
+	<!--Chartist css-->
+*= require /chartist/chartist.css
+*= require /chartist/chartist-plugin-tooltip.css
+
+<!--Toastr css-->
+*= require /toastr/build/toastr.css
+*= require /toaster/garessi-notif.css
+
+*/
