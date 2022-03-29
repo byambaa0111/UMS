@@ -260,6 +260,7 @@ class TeacherController {
 
             sysUser.fullName  =  teacher.lastName + " "+teacher.firstName
             sysUser.userId    =  "T"+teacher.teacherCode;
+            teacher.teacherCode  =  "T"+teacher.teacherCode;
             sysUser.password  =  helperService.strToMd5(teacher.teacherCode)
 
             sysUser.email     = teacher.email;
@@ -271,19 +272,12 @@ class TeacherController {
             teacher.setFaculty(dep.faculty)
 
             teacher.sysUser = sysUser
-/*savehiigdej baina */
 
-            if (sysUser.validate() && teacher.validate()) {
+            /*savehiigdej baina */
 
-                    sysUserService.save(sysUser);
+
+                    //sysUserService.save(sysUser);
                     teacherService.save(teacher)
-
-            }else{
-
-                    respond teacher.errors, view:'create'
-                    return
-            }
-
 
 
         } catch (ValidationException e) {
