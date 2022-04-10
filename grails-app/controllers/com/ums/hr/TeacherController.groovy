@@ -163,7 +163,7 @@ class TeacherController {
         def jobType     =  params["jobType"];
         def faculty     =  params["faculty"];
         def department  =  params["department"];
-
+/*this is test*/
 
         println("[DATA FOR DATATABLES]"+teacherType+faculty)
 
