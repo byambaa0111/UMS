@@ -38,6 +38,7 @@ class Teacher extends Person{
         return this.lastName +" "+this.firstName+" - "+this.teacherCode
     }
     static mapping = {
+        website defaultValue: "'http://www.mnun.edu.mn'"
         sort lastName: "asc" // or "asc"
     }
 }

@@ -49,7 +49,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                                                    <g:select id="department" class="form-control" name="department" from="${new com.ums.edu.uni.Department().list()}" optionKey="id" required=""  value="id"  noSelection="['':'-Choose Department-']" />
+                                                    <g:select id="department" class="form-control" name="department" from="${new com.ums.edu.uni.Department().list()}" optionKey="id" required=""  value="${this.teacher.department}"  noSelection="['':'-Choose Department-']" />
                                                     <g:if test="${errors}">
                                                         <g:each in="${errors}" var="error">
                                                             <span class="help-block"><g:message error="${error}"/></span>

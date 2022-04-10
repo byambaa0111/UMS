@@ -17,10 +17,11 @@ abstract class Person extends BaseDomain {
     String website
     String address
     String bio
-   /* static mapping = {
-        website defaultValue: "http://www.mnun.edu.mn";
+
+    static mapping = {
+        website defaultValue: "'http://www.mnun.edu.mn'"
     }
-*/
+
     static constraints = {
 
         firstName    blank:false,      nullable:false

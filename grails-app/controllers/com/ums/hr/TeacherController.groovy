@@ -180,6 +180,7 @@ class TeacherController {
             and {
                 or{
                     ilike('firstName',   '%' + queryString + '%')
+                    ilike('teacherCode',   '%' + queryString + '%')
                     ilike('lastName',    '%' + queryString + '%')
                     ilike('emailMnu',    '%' + queryString + '%')
                     ilike('register',    '%' + queryString + '%')
@@ -233,10 +234,12 @@ class TeacherController {
     }
 
     def getTeacherCode(){
+
         log.print("[GET CODE]"+params)
         def department = Department.get(params.getInt("id"))
-        def result = ""+department?.faculty?.id+department?.id + teacherService.list().last().id+1
+        def result = ""+department?.faculty?.id+department?.id + teacherService.count()
         render result as String
+
     }
     def create() {
         respond new Teacher(params)
@@ -302,6 +305,19 @@ class TeacherController {
     def update(Teacher teacher) {
         log.info("[UPDATE TEACHERS]`"+params)
         log.info("[UPDATE TEACHERS]"+teacher.lastName)
+
+        def sysUser = new SysUser()
+
+        sysUser.fullName  =  teacher.lastName + " "+teacher.firstName
+        sysUser.userId    =  "T"+teacher.teacherCode;
+        teacher.teacherCode  =  "T"+teacher.teacherCode;
+        sysUser.password  =  helperService.strToMd5(teacher.teacherCode)
+        sysUser.email     = teacher.email;
+        sysUser.emailMnu  = teacher.emailMnu;
+        sysUser.sysGroup  =  helperService.getSysGroup("TEACHER")
+
+        teacher.sysUser = sysUser
+
         if (teacher == null) {
             notFound()
             return
